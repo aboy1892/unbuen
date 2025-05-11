@@ -1,0 +1,101 @@
+.text-white {
+  color: white !important;
+}
+
+.bg-white {
+  background: white !important;
+}
+
+.text-black {
+  color: black;
+}
+
+.bg-black {
+  background: black;
+}
+
+// Primary Colors
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+.bg-blue {
+  background-color: var(--blue) !important;
+}
+
+.text-yellow {
+  color: var(--secondary);
+}
+
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+
+//  GrayLight Colors
+
+.text-gray-2 {
+  color: var(--gray-2) !important;
+}
+
+.bg-gray-light {
+  background: var(--gray-light) !important;
+}
+
+// gray
+
+.text-gray {
+  color: var(--gray);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+
+.bg-gray-light-2 {
+  background-color: var(--gray-light-2) !important;
+}
+
+// gray 3 colors
+
+.bg-gray-3 {
+  background-color: var(--gray-3);
+}
+
+.text-gray-3 {
+  color: var(--gray-3);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+
+// bright gray
+
+.text-bright-gray {
+  color: var(--bright-gray);
+}
+
+.bg-bright-gray {
+  background-color: var(--bright-gray);
+}
+

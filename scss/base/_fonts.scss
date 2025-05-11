@@ -1,34 +1,60 @@
 @font-face {
-  font-family: "AvenirLTStd";
-  src: url('./../../assets/fonts/avenir/AvenirLTStd-Medium.ttf') format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "AvenirLTStd";
-  src: url('./../../assets/fonts/avenir/AvenirLTStd-Heavy.ttf') format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "AvenirLTStd";
-  src: url('./../../assets/fonts/avenir/AvenirLTStd-Black.ttf') format("truetype");
-  font-weight: 900;
+  font-family: "Causten-Regular", sans-serif;
+  src: url('./../../assets/fonts/tipografias/Causten-Regular.otf') format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-.font-AvenirLTStd-Medium {
-  font-family: "AvenirLTStd", sans-serif;
-  font-weight: 500;
+@font-face {
+  font-family: "Causten-Semi-Bold", sans-serif;
+  src: url('./../../assets/fonts/tipografias/Causten-SemiBold.otf') format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
-.font-AvenirLTStd-Heavy {
-  font-family: "AvenirLTStd", sans-serif;
+
+@font-face {
+  font-family: "Causten-Bold", sans-serif;
+  src: url('./../../assets/fonts/tipografias/Causten-Bold.otf') format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dahlia-Regular", sans-serif;
+  src: url('./../../assets/fonts/tipografias/dahlia-regular.otf') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dahlia-Bold", sans-serif;
+  src: url('./../../assets/fonts/tipografias/dahlia-bold.otf') format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.Causten-Regular {
+  font-family: "Causten-Regular", sans-serif;
+  font-weight: 400;
+}
+.Causten-Semi-Bold {
+  font-family: "Causten-Semi-Bold", sans-serif;
+  font-weight: 600;
+}
+.Causten-Bold {
+  font-family: "Causten-Bold", sans-serif;
   font-weight: 700;
 }
-.font-AvenirLTStd-Black {
-  font-family: "AvenirLTStd", sans-serif;
-  font-weight: 900;
+.Dahlia-Regular {
+  font-family: "Dahlia-Regular", sans-serif;
+  font-weight: 400;
+}
+.Dahlia-Bold {
+  font-family: "Dahlia-Bold", sans-serif;
+  font-weight: 700;
 }

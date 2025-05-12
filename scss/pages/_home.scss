@@ -65,6 +65,76 @@
     }
 }
 
+.music-sec {
+    .card {
+        padding: 38px 16px 38px 38px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            transform: rotate(-5deg);
+            box-shadow: -4px 48px 81.5px #e0709d39;
+            .icon{
+                background-color: var(--primary-light);
+                &::before{
+                    background-color: var(--green-light);
+                }
+            }
+        }
+        .icon {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: var(--green-light);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3px 3px 0px 0px var(--heading-color);
+            transition: all .3s ease-in-out;
+            &::before{
+                content: '';
+                position: absolute;
+                background-color: var(--primary-light);
+                width: 13px;
+                height: 13px;
+                border-radius: 4px;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+    .card-s1{
+        .icon{
+            &::before{
+                left: -6px;
+                top: -6px;
+            }
+        }
+    }
+    .card-s2{
+        .icon{
+            &::before{
+                right: -6px;
+                bottom: 3px;
+            }
+        }
+    }
+    .card-s3{
+        .icon{
+            &::before{
+                left: -6px;
+                bottom: -6px;
+            }
+        }
+    }
+    .card-s4{
+        .icon{
+            &::before{
+                right: -6px;
+                top: -6px;
+            }
+        }
+    }
+}
+
 .benefit-sec {
     .collage-container {
         display: grid;
@@ -79,10 +149,11 @@
         overflow: hidden;
 
         .collage-item {
-            > img{
+            >img {
                 width: 100%;
                 height: auto;
             }
+
             .card {
                 .icon {
                     position: relative;
@@ -111,25 +182,26 @@
                     }
                 }
             }
+
             &:nth-child(1) {
                 grid-area: clitem1;
             }
-    
+
             &:nth-child(2) {
                 grid-area: clitem2;
                 display: grid;
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 14px;
             }
-    
+
             &:nth-child(3) {
                 grid-area: clitem3;
             }
-    
+
             &:nth-child(4) {
                 grid-area: clitem4;
             }
-    
+
             &:nth-child(5) {
                 grid-area: clitem5;
             }
@@ -243,7 +315,7 @@
 
 
 @media (max-width:1210px) {
-    .benefit-sec{
+    .benefit-sec {
         .collage-container {
             gap: 10px;
             grid-template-areas:
@@ -251,10 +323,10 @@
                 "clitem3 clitem3 clitem2"
                 "clitem3 clitem3 clitem2"
                 "clitem4 clitem5 clitem6" !important;
-
         }
     }
 }
+
 @media (max-width:992px) {
     .hero-sec {
         .hero-wrapper {

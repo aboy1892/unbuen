@@ -26,39 +26,56 @@ jQuery(document).ready(function () {
     });
   }
 
-  $('.logo-slider').slick({
+  var accordionItems = $('.accordion-item');
+  accordionItems.each(function () {
+    var header = $(this).find('.accordion-header');
+    var content = $(this).find('.accordion-content');
+
+    header.on('click', function () {
+      var isActive = $(this).parent().hasClass('active');
+
+      // Close all content sections
+      accordionItems.removeClass('active');
+      accordionItems.find('.accordion-content').removeClass('show');
+
+      // Toggle active class and show content
+      if (!isActive) {
+        $(this).parent().addClass('active');
+        content.addClass('show');
+      }
+    });
+  });
+
+  $('.reels-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
-    speed: 5000,
-    arrows: false,
-    swipe: false,
-    slidesToShow: 6,
-    cssEase: 'linear',
-    pauseOnFocus: false,
-    pauseOnHover: false,
+    autoplaySpeed: 3000,       
+    arrows: false,             
+    swipe: true,               
+    centerMode: true,         
+    centerPadding: '140px',
+    infinite: true ,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1080,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
+          centerPadding: '80px',
         }
       },
       {
-        breakpoint: 991,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
+          centerPadding: '40px',
         }
       },
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 425,
-        settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          centerPadding: '30px',
         }
       }
     ]

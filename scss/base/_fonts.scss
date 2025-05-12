@@ -1,29 +1,29 @@
 @font-face {
-  font-family: "Causten-Regular", sans-serif;
-  src: url('./../../assets/fonts/Causten-Regular.ttf') format("truetype");
+  font-family: "Causten-Regular";
+  src: url('./../../../../assets/fonts/causten-regular.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Causten-Semi-Bold", sans-serif;
-  src: url('./../../assets/fonts/Causten-SemiBold.ttf') format("truetype");
+  font-family: "Causten-SemiBold";
+  src: url('./../../assets/fonts/causten-semiBold.ttf') format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Causten-Bold", sans-serif;
-  src: url('./../../assets/fonts/Causten-Bold.ttf') format("truetype");
+  font-family: "Causten-Bold";
+  src: url('./../../assets/fonts/causten-bold.ttf') format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Dahlia-Regular", sans-serif;
+  font-family: "Dahlia-Regular";
   src: url('../../../assets/fonts/dahlia-regular.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Dahlia-Bold", sans-serif;
+  font-family: "Dahlia-Bold";
   src: url('./../../assets/fonts/dahlia-bold.ttf') format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -43,7 +43,7 @@
   font-weight: 400;
 }
 .Causten-Semi-Bold {
-  font-family: "Causten-Semi-Bold", sans-serif;
+  font-family: "Causten-SemiBold", sans-serif;
   font-weight: 600;
 }
 .Causten-Bold {

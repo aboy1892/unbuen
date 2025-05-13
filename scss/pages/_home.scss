@@ -6,6 +6,9 @@
         background: no-repeat center/cover;
         margin: 20px;
         border-radius: 55px;
+        p {
+            font-size: clamp(18px, 4vw, 24px);
+        }
     }
 
     .video-wrapper {
@@ -310,6 +313,9 @@
         background: no-repeat center/cover;
         border-radius: 44px;
         padding: clamp(45px, 7vw, 90px) 10px 0 10px;
+         p {
+            font-size: clamp(18px, 4vw, 24px);
+        }
     }
 }
 

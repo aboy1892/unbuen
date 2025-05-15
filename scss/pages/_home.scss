@@ -2,10 +2,11 @@
     padding: 0;
 
     .hero-wrapper {
-        padding: 90px 0 350px 0;
+        padding: 190px 0 350px 0;
         background: no-repeat center/cover;
         margin: 20px;
         border-radius: 55px;
+
         p {
             font-size: clamp(18px, 4vw, 24px);
         }
@@ -13,7 +14,9 @@
 
     .video-wrapper {
         margin-top: -340px;
-
+        width: calc(100vw - 70px);
+        max-width: 100%;
+        margin: -340px auto 0;
         .video-player-wrapper {
             position: relative;
 
@@ -31,12 +34,12 @@
                     transform: translate(-50%, -50%);
                     animation: 1.5s pulse infinite;
                     box-shadow: 0 0 0 14px transparent;
-                    transition: .3s;
+                    transition: 0.3s;
                     z-index: 1;
                     background-color: var(--primary-light);
 
                     img {
-                        transition: .3s;
+                        transition: 0.3s;
                     }
 
                     &:hover {
@@ -44,7 +47,7 @@
                         background-color: var(--primary);
 
                         img {
-                            filter: brightness(.4);
+                            filter: brightness(0.4);
                         }
                     }
 
@@ -68,16 +71,95 @@
     }
 }
 
+.result-sec {
+    .result-slider-wrapper {
+        width: calc(100vw - calc(calc(100vw - 100%) / 2));
+        .result-slider {
+            .border {
+                border-right: 4px solid var(--green-light);
+            }
+            .slider-item {
+                .card {
+                    border-radius: clamp(20px, 5vw, 33px);
+                    width: calc(100vw - 70px);
+                    max-width: 552px;
+                    margin: 0 10px;
+                    .author-wrapper {
+                        border-radius: 20px;
+                        background-color: rgba(#6cb6ad, 0.1);
+                        padding: 14px 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 10px;
+                        flex-wrap: wrap;
+                        >div {
+                            &:first-child{
+                                max-width: 280px;
+                            }
+                        }
+                        .result-count-wrapper {
+                            padding: 14px;
+                            border-radius: 16px;
+                            background-color: white;
+                            position: relative;
+                            transform: translateX(-30px) rotate(-4.42deg) scale(1.4);
+                            z-index: 1; // ensure it's above the ::before
+    
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 16px;
+                                background-color: white;
+                                z-index: -1;
+                                box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.2);
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 16px;
+                                background-color: white;
+                                z-index: -2;
+                                transform: translate(-6px, 6px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .progress {
+        height: 5px;
+        background: rgba(#e0709d, 0.2);
+        width: 100%;
+        margin-top: clamp(30px, 5vw, 60px);
+        overflow: hidden;
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--primary);
+            transition: width 0.1s linear;
+        }
+    }
+}
 .music-sec {
     .card {
         padding: 38px 16px 38px 38px;
-        transition: all .3s ease-in-out;
-        &:hover{
+        transition: all 0.3s ease-in-out;
+        &:hover {
             transform: rotate(-5deg);
             box-shadow: -4px 48px 81.5px #e0709d39;
-            .icon{
+            .icon {
                 background-color: var(--primary-light);
-                &::before{
+                &::before {
                     background-color: var(--green-light);
                 }
             }
@@ -92,45 +174,45 @@
             justify-content: center;
             align-items: center;
             box-shadow: 3px 3px 0px 0px var(--heading-color);
-            transition: all .3s ease-in-out;
-            &::before{
-                content: '';
+            transition: all 0.3s ease-in-out;
+            &::before {
+                content: "";
                 position: absolute;
                 background-color: var(--primary-light);
                 width: 13px;
                 height: 13px;
                 border-radius: 4px;
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
             }
         }
     }
-    .card-s1{
-        .icon{
-            &::before{
+    .card-s1 {
+        .icon {
+            &::before {
                 left: -6px;
                 top: -6px;
             }
         }
     }
-    .card-s2{
-        .icon{
-            &::before{
+    .card-s2 {
+        .icon {
+            &::before {
                 right: -6px;
                 bottom: 3px;
             }
         }
     }
-    .card-s3{
-        .icon{
-            &::before{
+    .card-s3 {
+        .icon {
+            &::before {
                 left: -6px;
                 bottom: -6px;
             }
         }
     }
-    .card-s4{
-        .icon{
-            &::before{
+    .card-s4 {
+        .icon {
+            &::before {
                 right: -6px;
                 top: -6px;
             }
@@ -152,7 +234,7 @@
         overflow: hidden;
 
         .collage-item {
-            >img {
+            > img {
                 width: 100%;
                 height: auto;
             }
@@ -174,7 +256,7 @@
             .card:nth-child(1) {
                 .icon {
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         right: 0;
                         top: 0;
@@ -213,8 +295,6 @@
                 grid-area: clitem6;
             }
         }
-
-
     }
 }
 
@@ -241,7 +321,7 @@
             border-radius: 16px;
             margin-bottom: 16px;
             background-color: white;
-            opacity: .6;
+            opacity: 0.6;
 
             &:last-child {
                 margin-bottom: 0;
@@ -256,7 +336,6 @@
                 box-shadow: -4px 48px 81.5px #e0709d39;
 
                 .accordion-header {
-
                     .icon {
                         background-color: var(--primary-light);
 
@@ -288,7 +367,7 @@
                     flex-shrink: 0;
 
                     img {
-                        transition: all .3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
                         transform: rotate(180deg);
                     }
                 }
@@ -313,14 +392,13 @@
         background: no-repeat center/cover;
         border-radius: 44px;
         padding: clamp(45px, 7vw, 90px) 10px 0 10px;
-         p {
+        p {
             font-size: clamp(18px, 4vw, 24px);
         }
     }
 }
 
-
-@media (max-width:1210px) {
+@media (max-width: 1210px) {
     .benefit-sec {
         .collage-container {
             gap: 10px;
@@ -333,23 +411,23 @@
     }
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
     .hero-sec {
         .hero-wrapper {
-            padding: 90px 0;
+            padding: 100px 0 90px;
+            border-radius: 40px;
         }
 
         .video-wrapper {
-            margin-top: 0;
+            margin-top: -90px;
         }
     }
 }
 
-@media (max-width:576px) {
+@media (max-width: 576px) {
     .faq-sec {
         .accordion {
             .accordion-item {
-
                 .accordion-header {
                     padding: 14px;
                     font-size: 17px;

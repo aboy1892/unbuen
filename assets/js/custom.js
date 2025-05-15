@@ -2,9 +2,7 @@
 
 // });
 
-
 jQuery(document).ready(function () {
-
   const menu = $(".menu-wrapper");
   const hamburgerMenu = $(".hamburger-menu");
 
@@ -26,67 +24,82 @@ jQuery(document).ready(function () {
     });
   }
 
-  var accordionItems = $('.accordion-item');
+  var accordionItems = $(".accordion-item");
   accordionItems.each(function () {
-    var header = $(this).find('.accordion-header');
-    var content = $(this).find('.accordion-content');
+    var header = $(this).find(".accordion-header");
+    var content = $(this).find(".accordion-content");
 
-    header.on('click', function () {
-      var isActive = $(this).parent().hasClass('active');
+    header.on("click", function () {
+      var isActive = $(this).parent().hasClass("active");
 
       // Close all content sections
-      accordionItems.removeClass('active');
-      accordionItems.find('.accordion-content').removeClass('show');
+      accordionItems.removeClass("active");
+      accordionItems.find(".accordion-content").removeClass("show");
 
       // Toggle active class and show content
       if (!isActive) {
-        $(this).parent().addClass('active');
-        content.addClass('show');
+        $(this).parent().addClass("active");
+        content.addClass("show");
       }
     });
   });
 
-  $('.reels-slider').slick({
+  $(".reels-slider").slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,       
-    arrows: false,             
-    swipe: true,               
-    centerMode: true,         
-    centerPadding: '140px',
-    infinite: true ,
+    autoplaySpeed: 3000,
+    arrows: false,
+    swipe: true,
+    centerMode: true,
+    centerPadding: "140px",
+    infinite: true,
     responsive: [
       {
         breakpoint: 1080,
         settings: {
           slidesToShow: 3,
-          centerPadding: '80px',
-        }
+          centerPadding: "80px",
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          centerPadding: '40px',
-        }
+          centerPadding: "40px",
+        },
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          centerPadding: '30px',
-        }
-      }
-    ]
+          centerPadding: "30px",
+        },
+      },
+    ],
   });
-  $('.testimonial-slider').slick({
-    autoplay: true,
-    slidesToShow: 1,
-    slideToScroll: 1,
+
+  // reviews slider start xxxxxxxxxxxxx
+  const $slider = $(".result-slider");
+  const $progressBar = $(".progress-bar");
+
+  $slider.on("init reInit afterChange", function (event, slick, currentSlide) {
+    // Get current index or fallback to 0
+    let i = (currentSlide ? currentSlide : 0) + 1;
+    let total = slick.slideCount;
+    let percent = (i / total) * 100;
+    $progressBar.css("width", percent + "%");
+  });
+
+  $slider.slick({
+    dots: true,
     arrows: true,
-    dots: false
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    variableWidth: true,
   });
+  // reviews slider ennd xxxxxxxxxxxxx
 
   $(".nav-link").on("click", function (e) {
     e.preventDefault();
@@ -102,30 +115,31 @@ jQuery(document).ready(function () {
   });
 
   // modal satrt
-  $('[data-target]').click(function () {
-    const targetModal = $(this).data('target'); // Get the target modal from data-target attribute
-    $(targetModal).addClass('fade show'); // Show the targeted modal
+  $("[data-target]").click(function () {
+    const targetModal = $(this).data("target"); // Get the target modal from data-target attribute
+    $(targetModal).addClass("fade show"); // Show the targeted modal
   });
 
   // Close modal when the 'x' is clicked
-  $('.close-modal').click(function () {
-    $(this).closest('.modal').removeClass('fade show'); // Close the closest modal
+  $(".close-modal").click(function () {
+    $(this).closest(".modal").removeClass("fade show"); // Close the closest modal
   });
-
 
   // Close modal if clicked outside the modal content
   $(window).click(function (event) {
-    if ($(event.target).is('.modal')) {
-      $(event.target).removeClass('fade show'); // Close the modal if the overlay is clicked
+    if ($(event.target).is(".modal")) {
+      $(event.target).removeClass("fade show"); // Close the modal if the overlay is clicked
     }
   });
 
-  $('.passwordToggler').on('click', function () {
-    let passInput = $(this).siblings('input[type="password"], input[type="text"]');
-    if (passInput.attr('type') === 'password') {
-        passInput.attr('type', 'text');
+  $(".passwordToggler").on("click", function () {
+    let passInput = $(this).siblings(
+      'input[type="password"], input[type="text"]'
+    );
+    if (passInput.attr("type") === "password") {
+      passInput.attr("type", "text");
     } else {
-        passInput.attr('type', 'password');
+      passInput.attr("type", "password");
     }
-});
+  });
 });

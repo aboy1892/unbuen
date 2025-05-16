@@ -92,8 +92,8 @@ jQuery(document).ready(function () {
   });
 
   $slider.slick({
-    dots: true,
-    arrows: true,
+    dots: false,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,

@@ -93,8 +93,8 @@
                         justify-content: space-between;
                         gap: 10px;
                         flex-wrap: wrap;
-                        >div {
-                            &:first-child{
+                        > div {
+                            &:first-child {
                                 max-width: 280px;
                             }
                         }
@@ -105,7 +105,7 @@
                             position: relative;
                             transform: translateX(-30px) rotate(-4.42deg) scale(1.4);
                             z-index: 1; // ensure it's above the ::before
-    
+
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -146,8 +146,105 @@
             height: 100%;
             width: 0%;
             background: var(--primary);
-            transition: width 0.1s linear;
+            transition: width 0.4s;
         }
+    }
+}
+.step-sec {
+    position: relative;
+    .steps {
+        position: relative;
+        max-width: 923px;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 19px;
+        column-gap: 88px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1124px;
+            height: 711px;
+            background-image: url("./../../assets/img/steps-strokes.svg");
+            left: -105px;
+            top: -25px;
+        }
+        .list-item {
+            position: relative;
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    .card {
+                        &:before {
+                            content: "#{$i}";
+                        }
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .card {
+                    &::before {
+                        top: -44px;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                .card {
+                    &::before {
+                        bottom: -48px;
+                    }
+                    margin-top: 54px;
+                }
+            }
+            &:nth-child(3) {
+                .card {
+                    &::before {
+                        bottom: -46px;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .card {
+                    &::before {
+                        bottom: -48px;
+                    }
+                    margin-top: 175px;
+                }
+            }
+            .card {
+                display: flex;
+                align-items: start;
+                gap: 24px;
+                padding: 30px 20px;
+                border: 4px solid var(--primary);
+                max-width: 406px;
+                height: fit-content;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background-color: var(--primary);
+                    color: white;
+                    font-weight: 700;
+                    font-size: 18px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    left: 60px;
+                }
+                .icon {
+                    min-width: 81px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .object {
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
 }
 .music-sec {
@@ -423,8 +520,50 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .result-sec {
+        .result-slider-wrapper {
+            .result-slider {
+                .border {
+                    border-right: 4px solid var(--green-light);
+                }
+                .slider-item {
+                    .card {
+                        .author-wrapper {
+                            .result-count-wrapper {
+                                padding: 12px;
+                                transform: translateX(0) rotate(-4.42deg) scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 576px) {
+    .result-sec {
+        .result-slider-wrapper {
+            .result-slider {
+                .border {
+                    border-right: 4px solid var(--green-light);
+                }
+                .slider-item {
+                    .card {
+                        .author-wrapper {
+                            flex-direction: column;
+                            align-items: start;
+
+                            .result-count-wrapper {
+                                margin-left: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .faq-sec {
         .accordion {
             .accordion-item {

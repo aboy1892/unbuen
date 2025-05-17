@@ -87,6 +87,9 @@
 .mt-0 {
   margin-top: 0;
 }
+.pt-0 {
+  padding-top: 0;
+}
 .pb-0 {
   padding-bottom: 0;
 }
@@ -174,41 +177,17 @@
   text-transform: uppercase;
 }
 
-.input-wrapper {
-  position: relative;
-  margin-bottom: 12px;
-  &.dark {
-    .form-label {
-      background-color: var(--navy-blue);
-      color: white;
-    }
-    .form-control {
-      color: white;
-    }
-  }
-  &.gray-light {
-    .form-control {
-      border-color: var(--gray-light);
-      background-color: var(--gray-light);
-    }
-  }
-  .form-label {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .form-control {
-    border: 1px solid #676767;
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-    background-color: transparent;
-    padding: 18px 20px;
-    margin-top: 5px;
-    transition: 0.3s;
-    &:focus,
-    &:hover {
-      border-color: var(--primary);
-    }
+.form-control {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 100%;
+  outline: none;
+  background-color: #F6DED8;
+  padding: 16px 20px;
+  transition: 0.3s;
+  &:focus,
+  &:hover {
+    border-color: var(--primary);
   }
 }
 
@@ -277,6 +256,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(#000, .57);
+  overflow: auto;
+  padding: 30px 0;
 
   &.fade {
     opacity: 0;
@@ -291,13 +272,14 @@
   }
 
   .modal-content {
-    background-color: white; // Use variable for content background
+    background-color: #F7F2EB; // Use variable for content background
     margin: auto;
-    padding: clamp(40px, 5vw, 70px) 20px;
+    padding: clamp(40px, 5vw, 80px) clamp(20px, 5vw, 74px);
     width: calc(100% - 40px);
-    max-width: 550px;
-    border-radius: 20px;
+    max-width: 1097px;
+    border-radius: clamp(20px, 5vw, 32px);
     position: relative;
+    border: 8px solid var(--primary);
 
     .close {
       color: white; // Use variable for close button color
@@ -318,25 +300,6 @@
       &:focus {
         cursor: pointer;
       }
-    }
-  }
-  &.login-modal {
-    .input-wrapper {
-      position: relative;
-      .passwordToggler {
-        background-color: transparent;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-    .btn {
-      background: linear-gradient(120deg,
-      rgba(66, 102, 178, 1) 0%,
-      rgba(149, 68, 156, 1) 50%,
-      rgba(254, 153, 0, 1) 100%);
-      font-size: 22px;
     }
   }
 }

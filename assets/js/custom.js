@@ -79,7 +79,7 @@ jQuery(document).ready(function () {
     ],
   });
 
-  // reviews slider start xxxxxxxxxxxxx
+  // result slider start xxxxxxxxxxxxx
   const $slider = $(".result-slider");
   const $progressBar = $(".progress-bar");
 
@@ -99,7 +99,22 @@ jQuery(document).ready(function () {
     pauseOnHover: true,
     variableWidth: true,
   });
-  // reviews slider ennd xxxxxxxxxxxxx
+  // result slider ennd xxxxxxxxxxxxx
+
+  $(".testimonial-slider").slick({
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    slidesToShow: 2,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1
+        },
+      }
+    ],
+  });
 
   $(".nav-link").on("click", function (e) {
     e.preventDefault();
@@ -129,17 +144,6 @@ jQuery(document).ready(function () {
   $(window).click(function (event) {
     if ($(event.target).is(".modal")) {
       $(event.target).removeClass("fade show"); // Close the modal if the overlay is clicked
-    }
-  });
-
-  $(".passwordToggler").on("click", function () {
-    let passInput = $(this).siblings(
-      'input[type="password"], input[type="text"]'
-    );
-    if (passInput.attr("type") === "password") {
-      passInput.attr("type", "text");
-    } else {
-      passInput.attr("type", "password");
     }
   });
 });
